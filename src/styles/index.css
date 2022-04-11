@@ -44,6 +44,24 @@
     background-color: green;
 }
 
-.glow{
-    box-shadow: 10px 10px 10px 10px whitesmoke;
+.glowRed{
+    /* box-shadow: 10px 10px 10px 10px whitesmoke; */
+    border-radius: 150px;
+    background: #ff4d4d;
+    box-shadow:  50px 50px 100px #661f1f,
+                 -50px -50px 100px #ff7b7b;
+}
+
+.glowYellow{
+    border-radius: 150px;
+    background: #fff93d;
+    box-shadow:  -50px -50px 100px #666418,
+                 50px 50px 100px #ffff62;
+}
+
+.glowGreen{
+    border-radius: 150px;
+    background: #3dff54;
+    box-shadow:  -50px -50px 100px #186622,
+                 50px 50px 100px #62ff86;
 }

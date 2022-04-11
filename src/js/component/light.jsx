@@ -2,20 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 export const Light = (props) => {
-	const [active, setActive] = useState(false);
-	function handleActive(actStatus) {
-		console.log(props.color == "red" && props.lightStatus.red == true);
-		if (props.color == "red" && actStatus.red) {
-			console.log(props.lightStatus.red, "soy red");
-			setActive((prev) => !prev);
-		}
-		if (props.color == "yellow" && actStatus.yellow) {
-			setActive((prev) => !prev);
-		}
-		if (props.color == "green" && actStatus.green) {
-			setActive((prev) => !prev);
-		}
-	}
 	return (
 		<div
 			onClick={() => {
@@ -42,11 +28,19 @@ export const Light = (props) => {
 							green: !prev.green,
 						};
 					}
-					handleActive(newActive);
 					return newActive;
 				});
 			}}
-			className={`light ${props.color} ${active ? "glow" : ""}`}></div>
+			className={`light ${props.color} 
+				${
+					props.lightStatus.red && props.color == "red"
+						? "glowRed"
+						: props.lightStatus.yellow && props.color == "yellow"
+						? "glowYellow"
+						: props.lightStatus.green && props.color == "green"
+						? "glowGreen"
+						: ""
+				}`}></div>
 	);
 };
 
